@@ -1163,7 +1163,7 @@ hr {
   }
 }
 
-.clearfix:before, .wrapper:before, article:before, .looper:before, .clearfix:after, .wrapper:after, article:after, .looper:after {
+.clearfix:before, .clearfix:after {
   display: table;
   content: ' ';
 }
@@ -1183,7 +1183,7 @@ hr {
   content: ' ';
 }
 
-.clearfix:after, .wrapper:after, article:after, .looper:after,
+.clearfix:after,
 .container:after,
 .container-fluid:after,
 .row:after {
@@ -2554,8 +2554,8 @@ p {
 header {
   background: rgba(0, 0, 0, 0.6);
   padding: 10px 0;
-  position: absolute;
-  z-index: 2;
+  position: fixed;
+  z-index: 15;
   width: 100%;
 }
 
@@ -2653,6 +2653,8 @@ header .header--nav .headnav .headnav--item:hover:after {
 
 header .header--nav .headnav .headnav--item:hover .submenu {
   display: block;
+  width: 100%;
+  text-align: center;
 }
 
 .slider_wraper {
@@ -2767,6 +2769,7 @@ header .header--nav .headnav .headnav--item:hover .submenu {
 
 .block--content {
   padding: 50px 0;
+  background-image: url(../img/bg_pattern.jpg);
 }
 
 .block--content .content--title {
@@ -2788,6 +2791,7 @@ header .header--nav .headnav .headnav--item:hover .submenu {
 .block--content .table--sort #sort--list {
   padding: 2px;
   cursor: pointer;
+  background: transparent;
 }
 
 .block--content .table--sort #sort--list:focus {
@@ -2799,7 +2803,7 @@ header .header--nav .headnav .headnav--item:hover .submenu {
 }
 
 .block--content .items__list--wrap .category__list--item {
-  background-color: #fff;
+  background-color: transparent;
   text-align: center;
   border-bottom: 1px solid #fff;
   transition: .3s ease-out;
@@ -2810,6 +2814,7 @@ header .header--nav .headnav .headnav--item:hover .submenu {
   display: inline-block;
   width: calc(20% -3px);
   border: 1px solid #333;
+  font-weight: bold;
 }
 
 .block--content .items__list--wrap .category__list--item:hover {
@@ -2820,7 +2825,6 @@ header .header--nav .headnav .headnav--item:hover .submenu {
 .block--content .items__list--wrap .list__item--active {
   background-color: #333;
   color: #fff;
-  font-weight: bold;
 }
 
 .block--content .items__grid--wrap {
@@ -2995,31 +2999,6 @@ header .header--nav .headnav .headnav--item:hover .submenu {
   background: #046904;
 }
 
-.block--content .pagination {
-  padding-top: 30px;
-}
-
-.block--content .pagination a {
-  padding: 5px 10px;
-  color: #333;
-  margin: 0 1px;
-}
-
-.block--content .pagination a:hover {
-  box-shadow: 0 0 1px 0 #000;
-  text-decoration: none;
-}
-
-.block--content .pagination a:focus {
-  text-decoration: none;
-}
-
-.block--content .pagination .current {
-  box-shadow: 0 0 1px 0 #333;
-  color: #477dca;
-  padding: 5px 10px;
-}
-
 .gallery--block {
   padding: 50px 0;
   background-color: #333;
@@ -3059,6 +3038,31 @@ header .header--nav .headnav .headnav--item:hover .submenu {
 
 .gallery--block .gallery__items--wrap .gallery--item:hover {
   box-shadow: 0 0 2px 2px #fff;
+}
+
+.gallery--block .pagination {
+  padding-top: 30px;
+}
+
+.gallery--block .pagination a {
+  padding: 5px 10px;
+  color: #a9a8a8;
+  margin: 0 1px;
+}
+
+.gallery--block .pagination a:hover {
+  box-shadow: 0 0 1px 0 #fff;
+  text-decoration: none;
+}
+
+.gallery--block .pagination a:focus {
+  text-decoration: none;
+}
+
+.gallery--block .pagination .current {
+  box-shadow: 0 0 1px 0 #a9a8a8;
+  color: #477dca;
+  padding: 5px 10px;
 }
 
 .news_block {
@@ -3279,13 +3283,12 @@ footer .footer--logo {
 footer .footnav .footnav--item {
   display: inline-block;
   padding: 5px 10px;
-  max-width: 70px;
   text-align: center;
   position: relative;
 }
 
 footer .footnav .footnav--item .footnav__item--link {
-  font-size: 20px;
+  font-size: 16px;
   color: #fff;
   text-transform: capitalize;
 }
@@ -3342,18 +3345,21 @@ footer .add__modal--wrap, footer .login__modal--wrap {
 }
 
 footer .add__modal--wrap .modal__form--wrap, footer .login__modal--wrap .modal__form--wrap {
-  max-width: 450px;
+  max-width: 350px;
   width: 90%;
   background: #fff;
-  padding: 30px 15px;
+  padding: 25px;
   position: relative;
   margin: 0 auto;
   box-shadow: 0 0 1px 1px #fff;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
 }
 
 footer .add__modal--wrap .modal__form--wrap .modal__bid--title, footer .add__modal--wrap .modal__form--wrap .login--title, footer .login__modal--wrap .modal__form--wrap .modal__bid--title, footer .login__modal--wrap .modal__form--wrap .login--title {
   text-align: center;
-  font-size: 18px;
+  font-size: 22px;
   margin-bottom: 15px;
 }
 
@@ -3361,80 +3367,87 @@ footer .add__modal--wrap .modal__form--wrap .close__new--bid, footer .add__modal
   position: absolute;
   right: -15px;
   top: -15px;
-  font-size: 22px;
-  color: #333;
+  font-size: 20px;
+  color: #fff;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #fff;
+  background: #477dca;
   text-align: center;
   line-height: 1.4;
-  box-shadow: 0 0 1px 1px #333;
 }
 
 footer .add__modal--wrap .modal__form--wrap .close__new--bid:hover, footer .add__modal--wrap .modal__form--wrap .close--login:hover, footer .login__modal--wrap .modal__form--wrap .close__new--bid:hover, footer .login__modal--wrap .modal__form--wrap .close--login:hover {
-  box-shadow: 0 0 2px 1px #000;
+  box-shadow: 0 0 2px 1px #fff;
 }
 
 footer .add__modal--wrap .modal__form--wrap form, footer .login__modal--wrap .modal__form--wrap form {
   text-align: center;
 }
 
+footer .add__modal--wrap .modal__form--wrap form .file--upload, footer .login__modal--wrap .modal__form--wrap form .file--upload {
+  padding: 9px;
+  margin: 0 auto;
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  border: 1px solid;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+footer .add__modal--wrap .modal__form--wrap form #upload--file, footer .login__modal--wrap .modal__form--wrap form #upload--file {
+  display: none;
+}
+
 footer .add__modal--wrap .modal__form--wrap form input, footer .login__modal--wrap .modal__form--wrap form input {
   display: block;
-  width: 50%;
+  width: 90%;
   margin: 0 auto;
   margin-bottom: 10px;
-  padding: 5px;
-  font-size: 14px;
+  padding: 7px;
+  font-size: 15px;
   color: #000;
+  border-radius: 4px;
 }
 
 footer .add__modal--wrap .modal__form--wrap form input:focus, footer .login__modal--wrap .modal__form--wrap form input:focus {
   outline: none;
+  color: #525864;
+  border-color: #84c0ee;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 7px #96c7ec;
 }
 
 footer .add__modal--wrap .modal__form--wrap form #cat--items, footer .login__modal--wrap .modal__form--wrap form #cat--items {
-  width: 31%;
-  padding: 2px;
+  width: 40%;
+  padding: 7px;
   cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
-footer .add__modal--wrap .modal__form--wrap form .add__bid--button, footer .login__modal--wrap .modal__form--wrap form .add__bid--button {
-  background: transparent;
-  border: 1px solid #333;
-  padding: 4px 10px;
+footer .add__modal--wrap .modal__form--wrap form .add__bid--button, footer .add__modal--wrap .modal__form--wrap form .login--enter, footer .login__modal--wrap .modal__form--wrap form .add__bid--button, footer .login__modal--wrap .modal__form--wrap form .login--enter {
+  background: #477dca;
+  color: #fff;
+  border-radius: 4px;
+  border: 0;
+  padding: 12px 25px;
   transition: .3s all ease-out;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-footer .add__modal--wrap .modal__form--wrap form .add__bid--button:hover, footer .login__modal--wrap .modal__form--wrap form .add__bid--button:hover {
+footer .add__modal--wrap .modal__form--wrap form .add__bid--button:hover, footer .add__modal--wrap .modal__form--wrap form .login--enter:hover, footer .login__modal--wrap .modal__form--wrap form .add__bid--button:hover, footer .login__modal--wrap .modal__form--wrap form .login--enter:hover {
   box-shadow: 0 0 1px 1px #333;
 }
 
-footer .add__modal--wrap .modal__form--wrap form .login--enter, footer .login__modal--wrap .modal__form--wrap form .login--enter {
-  display: block;
-  background: transparent;
-  border: 1px solid #333;
-  padding: 4px 10px;
-  transition: .3s all ease-out;
-  width: 30%;
-  margin: 0 auto;
+footer .add__modal--wrap .modal__form--wrap form .registration--link, footer .login__modal--wrap .modal__form--wrap form .registration--link {
+  padding: 10px;
+  color: #fff;
+  background-color: #264d85;
 }
 
-footer .add__modal--wrap .modal__form--wrap form .login--enter:hover, footer .login__modal--wrap .modal__form--wrap form .login--enter:hover {
-  box-shadow: 0 0 1px 1px #333;
-}
-
-footer .add__modal--wrap .modal__form--wrap form .registation--link, footer .login__modal--wrap .modal__form--wrap form .registation--link {
-  position: absolute;
-  right: 15px;
-  padding: 4px 10px;
-  border: 1px solid #333;
-  color: #333;
-  bottom: 10px;
-}
-
-footer .add__modal--wrap .modal__form--wrap form .registation--link:hover, footer .login__modal--wrap .modal__form--wrap form .registation--link:hover {
+footer .add__modal--wrap .modal__form--wrap form .registration--link:hover, footer .login__modal--wrap .modal__form--wrap form .registration--link:hover {
   box-shadow: 0 0 1px 1px #333;
 }
 
@@ -3456,6 +3469,9 @@ footer .add__modal--wrap .modal__form--wrap form .registation--link:hover, foote
   .news_block .news_title {
     width: 28%;
   }
+  footer .footnav .footnav--item {
+    padding: 3px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -3476,6 +3492,7 @@ footer .add__modal--wrap .modal__form--wrap form .registation--link:hover, foote
   header .header--nav {
     position: absolute;
     width: 100%;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.9);
     margin-top: 10px;
     padding: 15px;
@@ -3488,6 +3505,26 @@ footer .add__modal--wrap .modal__form--wrap form .registation--link:hover, foote
   }
   header .header--nav .headnav .headnav--item {
     border-bottom: 1px solid #fff;
+    width: 100%;
+  }
+  header .header--nav .headnav .headnav--item:hover {
+    outline: none;
+  }
+  header .header--nav .headnav .headnav--item:hover .headnav__item--link {
+    display: block;
+    padding-bottom: 5px;
+  }
+  header .header--nav .headnav .headnav--item .submenu {
+    border-top: 1px solid #fff;
+    top: 0;
+    padding: 0;
+    position: relative;
+  }
+  header .header--nav .headnav .headnav--item .submenu .submenu--item {
+    padding: 7px;
+  }
+  header .header--nav .headnav .headnav--item .submenu .submenu--item:last-child {
+    border-bottom: 0;
   }
   header .header--nav .headnav .headnav--item a {
     font-size: 18px;
@@ -3581,27 +3618,50 @@ footer .add__modal--wrap .modal__form--wrap form .registation--link:hover, foote
   footer .first__footer--row {
     text-align: center;
   }
+  footer .first__footer--row .footnav {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   footer .first__footer--row .footnav .footnav--item {
     padding: 4px 6px;
   }
-  footer .add__modal--wrap .modal__form--wrap form input, footer .login__modal--wrap .modal__form--wrap form input {
-    width: 80%;
+  footer .add__modal--wrap, footer .login__modal--wrap {
+    padding-top: 20%;
   }
-  footer .add__modal--wrap .modal__form--wrap form .login--enter, footer .login__modal--wrap .modal__form--wrap form .login--enter {
+  footer .add__modal--wrap .modal__form--wrap form .file--upload, footer .login__modal--wrap .modal__form--wrap form .file--upload {
+    width: 100%;
+  }
+  footer .add__modal--wrap .modal__form--wrap form input, footer .login__modal--wrap .modal__form--wrap form input {
+    width: 100%;
+  }
+  footer .add__modal--wrap .modal__form--wrap form .login__button--wrap, footer .login__modal--wrap .modal__form--wrap form .login__button--wrap {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  footer .add__modal--wrap .modal__form--wrap form .login__button--wrap .login--enter, footer .login__modal--wrap .modal__form--wrap form .login__button--wrap .login--enter {
     padding: 8px 10px;
-    width: 50%;
+    width: 100%;
     margin-bottom: 15px;
   }
-  footer .add__modal--wrap .modal__form--wrap form .registation--link, footer .login__modal--wrap .modal__form--wrap form .registation--link {
+  footer .add__modal--wrap .modal__form--wrap form .login__button--wrap .registration--link, footer .login__modal--wrap .modal__form--wrap form .login__button--wrap .registration--link {
     display: block;
     position: relative;
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
-    left: 0;
     padding: 8px;
   }
   footer .add__modal--wrap .modal__form--wrap form #cat--items, footer .login__modal--wrap .modal__form--wrap form #cat--items {
-    width: 42%;
+    width: 100%;
   }
 }
 

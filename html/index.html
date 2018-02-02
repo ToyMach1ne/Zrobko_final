@@ -10,7 +10,7 @@
   <link href="favicon.ico" rel="shortcut icon">
 
   <!-- css + javascript -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
   <link rel="stylesheet" href="css/main.css" media="all">
 
 </head>
@@ -33,7 +33,7 @@
         <nav class="header--nav col-md-10 col-sm-9 col-xs-7" role="navigation">
           <ul class="headnav">
             <li class="headnav--item">
-            	<a href="#">menu</a>
+            	<a href="#" class="headnav__item--link" id="to--first">Главная</a>
             	<ul class="submenu">
             		<li class="submenu--item"><a href="#">submenu</a></li>
             		<li class="submenu--item"><a href="#">submenu</a></li>
@@ -42,13 +42,13 @@
             	</ul>
             </li>
             <li class="headnav--item">
-            	<a href="#">menu</a>
+            	<a href="#" class="headnav__item--link" id="to--second">Лоты</a>
             </li>
             <li class="headnav--item">
-            	<a href="#">menu</a>
+            	<a href="#" class="headnav__item--link" id="to--third">Галерея</a>
             </li>
             <li class="headnav--item">
-            	<a href="#">menu</a>
+            	<a href="#" class="headnav__item--link" id="to--fourth">Новости</a>
             	<ul class="submenu">
             		<li class="submenu--item"><a href="#">submenu</a></li>
             		<li class="submenu--item"><a href="#">submenu</a></li>
@@ -57,7 +57,7 @@
             	</ul>
             </li>
             <li class="headnav--item">
-            	<a href="#">menu</a>
+            	<a href="#" class="headnav__item--link" id="to--fifth">Контакты</a>
             </li>
           </ul>
         </nav><!-- /header--nav -->
@@ -67,7 +67,7 @@
   </header><!-- /header -->
 
   <section role="main">
-    <div class="slider_wraper">
+    <div class="slider_wraper" id="first--block">
       <div class="owl-carousel">
           <div class="owl__conent--wrap">
             <img src="img/owl4.jpeg" alt="first">
@@ -118,7 +118,7 @@
       </div>
     </div><!-- slider_wraper -->
 
-    <div class="block--content">
+    <div class="block--content" id="second--block">
       <div class="container">
         <div class="row">
           <h4 class="content--title">Наличие лотов</h4>
@@ -142,22 +142,22 @@
               <li class="category__list--item">Раритеты</li>
             </ul>
 
-            <div class="row items__grid--wrap">
-              <div class="col-md-4 col-sm-4">
+            <div class="row items__grid--wrap" id="car_wrap">
+              <div class="col-md-4 col-sm-4" id="car_item">
                 <div class="grid__item--wrap">
                   <a href="#" class="item__thumb--link"><img class="item--thumb" src="img/car_thumb.jpg" alt="auction item"></img></a>
                   <div class="item__info--wrap">
-                    <p class="date">Feb 09, 9:00 PM CET</p>
+                    <p class="date" id="date">Feb 09, 9:00 PM CET</p>
                     <a href="#" class="item--title">1958 Ferrari 250 GT Cabriolet Série 1 par Pinin</a>
                     <p class="price--forbid">2.500.000 $</p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4 col-sm-4">
-                <div class="grid__item--wrap">
+                <div class="grid__item--wrap" id="car_item2">
                   <a href="#" class="item__thumb--link"><img class="item--thumb" src="img/car--second.jpeg" alt="auction item"></img></a>
                   <div class="item__info--wrap">
-                    <p class="date">Feb 09, 9:00 PM CET</p>
+                    <p class="date" id="date">Feb 09, 9:00 PM CET</p>
                     <a href="#" class="item--title">1958 Ferrari 250 GT Cabriolet Série 1 par Pinin</a>
                     <p class="price--forbid">2.500.000 $</p>
                   </div>
@@ -167,7 +167,7 @@
                 <div class="grid__item--wrap">
                   <a href="#" class="item__thumb--link"><img class="item--thumb" src="img/car_thumb.jpg" alt="auction item"></img></a>
                   <div class="item__info--wrap">
-                    <p class="date">Feb 09, 9:00 PM CET</p>
+                    <p class="date" id="date">Feb 09, 9:00 PM CET</p>
                     <a href="#" class="item--title">1958 Ferrari 250 GT Cabriolet Série 1 par Pinin</a>
                     <p class="price--forbid">2.500.000 $</p>
                   </div>
@@ -615,24 +615,11 @@
             </div><!-- col-md-12 -->
           </div><!-- row -->
 
-          <div class="row pagination--row">
-            <div class="col-md-12">
-              <div class="pagination">
-                <a href="#" class="prev"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
-                <span class="current">1</span>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#" class="next"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-              </div>
-            </div>
-          </div><!-- pagination--row -->
-
         </div><!-- container -->
 
       </div><!--block--content -->
 
-      <div class="gallery--block">
+      <div class="gallery--block" id="third--block">
          <div class="container">
            <div class="row">
             <h4 class="gallery--title">Галерея изображений</h4>
@@ -675,10 +662,22 @@
                </div>
              </div>
            </div>
+           <div class="row pagination--row">
+            <div class="col-md-12">
+              <div class="pagination">
+                <a href="#" class="prev"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
+                <span class="current">1</span>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#" class="next"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div><!-- pagination--row -->
          </div>
       </div><!-- gallery--block -->
 
-      <div class="news_block">
+      <div class="news_block" id="fourth--block">
         <div class="container">
           <h4 class="news_title">Новости и акции</h4>
           <div class="row">
@@ -722,7 +721,7 @@
         </div>
     </div><!-- news_block -->
 
-      <div class="contacts--block">
+      <div class="contacts--block" id="fifth--block">
         <div id="map"></div>
           <div class="contact--card">
               <div class="card-left"></div>
@@ -760,19 +759,19 @@
       <div class="col-md-6 col-sm-6">
         <ul class="footnav">
           <li class="footnav--item">
-            <a href="#" class="footnav__item--link">menu</a>
+            <a href="#first--block" class="footnav__item--link">Главная</a>
           </li>
           <li class="footnav--item">
-            <a href="#" class="footnav__item--link">menu</a>
+            <a href="#second--block" class="footnav__item--link">Лоты</a>
           </li>
           <li class="footnav--item">
-            <a href="#" class="footnav__item--link">menu</a>
+            <a href="#third--block" class="footnav__item--link">Галерея</a>
           </li>
           <li class="footnav--item">
-            <a href="#" class="footnav__item--link">menu</a>
+            <a href="#fourth--block" class="footnav__item--link">Новости</a>
           </li>
           <li class="footnav--item">
-            <a href="#" class="footnav__item--link">menu</a>
+            <a href="#fifth--block" class="footnav__item--link">Контакты</a>
           </li>
         </ul>
       </div>
@@ -798,14 +797,16 @@
       <p class="modal__bid--title">Добавить лот на продажу</p>
       <form action="#">
         <input type="text" class="bid_name" placeholder="Название лота *" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Название лота *'" />
-        <input type="text" class="bid_price" placeholder="Цена *" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Цена *'" />
-        <select name="categoty" id="cat--items">
+        <label for="upload--file" class="file--upload">Изображение</label>
+         <select name="categoty" id="cat--items">
           <option value="Авто">Авто</option>
           <option value="Драгоценности">Драгоценности</option>
           <option value="Картины">Картины</option>
           <option value="Дом">Дом</option>
           <option value="Раритеты">Раритеты</option>
         </select>
+        <input type="file" id="upload--file" class="bid_thumb" placeholder="Изображение" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Изображение'" />
+        <input type="text" class="bid_price" placeholder="Цена *" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Цена *'" />
         <button type="submit" class="add__bid--button">Добавить</button>
       </form>
     </div>
@@ -816,10 +817,12 @@
       <a href="#" class="close--login"><i class="fa fa-times" aria-hidden="true"></i></a>
       <p class="login--title">Войти на сайт</p>
       <form action="#">
-        <input type="text" class="login--field" placeholder="Логин *" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Логин *'" />
-        <input type="text" class="pass--field" placeholder="Пароль *" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Пароль *'" />
-        <button type="submit" class="login--enter">Войти</button>
-        <a href="#" class="registation--link">Регистрация</a>
+        <input type="text" name="username" class="login--field" placeholder="Логин *" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Логин *'" />
+        <input type="text" name="password" class="pass--field" placeholder="Пароль *" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Пароль *'" />
+        <div class="login__button--wrap">
+        	<a href="#" class="registration--link">Регистрация</a>
+        	<button type="submit" class="login--enter">Войти</button>
+        </div>
       </form>
     </div>
   </div><!-- add__modal--wrap -->
